@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<body>
+  <h1>Bienvenid@</h1>
+  <div class="container">
+    <section><%- include('carousel') -%></section>
+    <section>
+      <% tasks.forEach((task)=> { %>
+      <table class="table-danger">
+        <thead>
+          <tr>
+            <th><%= task.titulo %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= task.descripcion %></td>
+            <td>
+              <button
+                onclick="eliminarTarea(`<%= task._id %>`)"
+                id="eliminarTarea"
+                type="button"
+                value="<%=task._id%>"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% }); %>
+    </section>
+  </div>
+  <script src='/js/bootstrap.js'></script>
+  <script src="/js/landingPage.js"></script>
+</body>
+<%- include('partials/footer') -%>
