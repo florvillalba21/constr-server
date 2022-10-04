@@ -3,23 +3,24 @@
   <h1>Tareas</h1>
   <div class="container">
     <section><%- include('carousel') -%></section>
+
     <section>
       <% tasks.forEach((task)=> { %>
       <table class="table-danger">
         <thead>
-          <tr>
+          <tr class="table-danger">
             <th><%= task.titulo %></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><%= task.descripcion %></td>
-            <td>
+          <tr class="table-danger">
+            <td class="table-danger"><%= task.descripcion %></td>
+            <td class="table-danger">
               <button
-                onclick="eliminarTarea(`<%= task._id %>`)"
-                id="eliminarTarea"
+                onclick="eliminarTarea('<%= task._id %>')"
+                class="eliminar"
+                value="<%= task._id %>"
                 type="button"
-                value="<%=task._id%>"
               >
                 Eliminar
               </button>
@@ -30,7 +31,7 @@
       <% }); %>
     </section>
   </div>
-  <script src='/js/bootstrap.js'></script>
+  <script src="/js/bootstrap.js"></script>
   <script src="/js/landingPage.js"></script>
 </body>
 <%- include('partials/footer') -%>

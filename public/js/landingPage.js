@@ -1,9 +1,15 @@
+let btn = document.getElementsByClassName('eliminar')
 
-const eliminarTarea = async(idTarea)=> {
-    return console.log(idTarea)
-    fetch( `http://localhost:4000/taks/${id}`)
+
+function eliminarTarea(id) {
+    try {
+        let idd = id
+        // await fetch(`http://localhost:4000/tasks/${idTarea}`)
+        console.log(id)        
+    } catch (error) {
+        console.log(error)
+    }
     
 
 }
 
-document.getElementById('eliminarTarea').addEventListener('click', eliminarTarea)
